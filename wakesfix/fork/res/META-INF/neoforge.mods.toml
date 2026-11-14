@@ -1,0 +1,43 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "wakesfix"
+version = "${version}"
+displayName = "Wakes 尾迹高度修正"
+authors = "Follwing_Rain"
+description = '''
+修正 Wakes 模组的一个老 bug：坐船从高水落到低水时，船尾波浪会跟着船一起往下掉。
+
+根因：Wakes 在船处于水面上时每 tick 用 WakesUtils.getWaterLevel() 刷新 producingWaterLevel；
+船离开水面（下落）后该值不再有效，但 SplashPlaneParticle 仍按 producingHeight() 定位，
+于是尾迹跟着船一起下降，而不是留在水面上。
+
+本模组不修改 Wakes 的 jar，也不依赖数据包：作为联动模组在客户端 tick 里读取
+com.goby56.wakes.duck.ProducesWake 的两个公开字段（onWaterSurface / producingWaterLevel），
+记住「最后一次在水面时」的水位，并在船离开水面期间把该字段写回这个水位。
+
+仅客户端生效；未安装 Wakes 时自动休眠。
+'''
+
+[[dependencies.wakesfix]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.wakesfix]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.wakesfix]]
+modId = "wakes"
+type = "optional"
+versionRange = "[0.2.0,)"
+ordering = "AFTER"
+side = "CLIENT"

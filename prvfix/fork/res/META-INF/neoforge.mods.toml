@@ -1,0 +1,47 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "prvfix"
+version = "${version}"
+displayName = "PlayerRevive Frame Fix"
+authors = "Follwing_Rain"
+description = '''
+修正 PlayerRevive 倒地时世界与 UI 疯狂闪烁的问题。
+
+根因：ReviveEventClient 把「倒地状态处理」挂在了 RenderGuiLayerEvent.Post（每个 GUI 图层都会触发一次），
+导致同一帧内被反复执行几十次 —— 每次都重设 pose/药水/鼠标锁定，并反复调用
+GameRenderer.checkEntityPostEffect / loadEffect 切换后处理链；它绘制倒计时文字后又没有恢复
+RenderSystem 的 shaderColor/blend 状态，于是后续图层每帧以错误状态绘制 → 世界与 UI 一起闪。
+
+本补丁做两件事：
+1) 同一渲染帧只让它的 tick 逻辑执行一次（多余的调用直接取消）；
+2) 它绘制完文字后，把 shaderColor/blend/depth 恢复为默认值。
+
+不改动倒地玩法本身（计时、复活、鼠标锁定、模糊效果都保留）。
+'''
+
+[[dependencies.prvfix]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.prvfix]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.prvfix]]
+modId = "playerrevive"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[mixins]]
+config = "prvfix.mixins.json"

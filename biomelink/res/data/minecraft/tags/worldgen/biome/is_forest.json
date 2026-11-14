@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#biomeswevegone:forest",
+    "#biomeswevegone:dense",
+    "#biomeswevegone:floral",
+    "#biomeswevegone:magical",
+    "#c:is_floral",
+    "#c:is_magical"
+  ]
+}

@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "geofpv"
+version = "${version}"
+displayName = "GeckoLib First-Person Armor Fix"
+authors = "Follwing_Rain"
+description = '''
+让 GeckoLib 的 3D 盔甲在第一人称不再渲染。
+
+根因（已在 GeckoLib 4.9.3 字节码里核对）：GeoArmorRenderer 只按 HumanoidModel 部件可见性决定骨骼是否绘制，
+整个类没有任何相机类型判定；所以任何在第一人称走盔甲层的路径都会把整套 3D 盔甲画出来（SC 枪械、铁魔法王冠等）。
+
+本模组只拦一处：GeoArmorRenderer#renderToBuffer，当「正在渲染本地玩家」且「相机为第一人称」时取消。
+原版盔甲、第三人称、其他实体、盔甲图标与属性一律不受影响。
+'''
+
+[[dependencies.geofpv]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.geofpv]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.geofpv]]
+modId = "geckolib"
+type = "required"
+versionRange = "[4.9.3,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[mixins]]
+config = "geofpv.mixins.json"

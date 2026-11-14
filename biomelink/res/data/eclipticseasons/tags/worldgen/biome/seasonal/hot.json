@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#c:is_desert",
+    "#c:is_sandy",
+    "#biomeswevegone:desert",
+    "#biomeswevegone:sandy",
+    "#biomeswevegone:hot"
+  ]
+}

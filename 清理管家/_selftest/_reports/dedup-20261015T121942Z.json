@@ -1,0 +1,56 @@
+{
+  "tool": "janitor",
+  "toolVersion": "1.0.0",
+  "command": "dedup",
+  "generatedUtc": "2026-10-15T12:19:42.7225631Z",
+  "configPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\selftest.config.jsonc",
+  "powershell": "7.6.7 (Core)",
+  "parameters": {
+    "minGroupBytes": 1048576,
+    "hashAlgorithm": "SHA256",
+    "keepRule": "newestMtime",
+    "roots": [
+      "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox"
+    ]
+  },
+  "stats": {
+    "scannedFileCount": 23,
+    "zeroByteSkipped": 1,
+    "sizeCandidateCount": 13,
+    "hashedFileCount": 13
+  },
+  "groups": [
+    {
+      "Hash": "C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66",
+      "Size": 1310720,
+      "Count": 3,
+      "ReclaimBytes": 2621440,
+      "KeepPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-c.bin",
+      "KeepReason": "keepRule=newestMtime：组内修改时间最新（2026-10-15 12:19:21Z）；并列时取路径更短者，再按字典序",
+      "Members": [
+        {
+          "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-c.bin",
+          "LastWriteUtc": "2026-10-15T12:19:21.5335246Z",
+          "IsKeep": true
+        },
+        {
+          "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+          "LastWriteUtc": "2026-10-10T12:19:21.5469325Z",
+          "IsKeep": false
+        },
+        {
+          "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+          "LastWriteUtc": "2026-10-05T12:19:21.5388033Z",
+          "IsKeep": false
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "groupCount": 1,
+    "reclaimBytes": 2621440,
+    "candidateCount": 2
+  },
+  "errors": [],
+  "candidatesManifestPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_reports\\candidates-dedup-20261015T121942Z.json"
+}

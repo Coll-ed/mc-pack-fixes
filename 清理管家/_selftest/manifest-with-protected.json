@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "source": "selftest-rejection",
+  "entries": [
+    {
+      "note": "protected by protectedPatterns",
+      "category": "tmp-file",
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\.git\\scratch.tmp"
+    },
+    {
+      "note": "legit candidate",
+      "category": "tmp-file",
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\cache.tmp"
+    }
+  ]
+}

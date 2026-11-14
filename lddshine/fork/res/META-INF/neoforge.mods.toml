@@ -1,0 +1,46 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "lddshine"
+version = "${version}"
+displayName = "LDD × Shine 彩色动态光桥接"
+authors = "Follwing_Rain"
+description = '''
+把 LambDynamicLights 的动态光源（手持火把、发光方块物品、掉落物等）喂进 Shine 的彩色光着色管线，
+让动态光也带上 Shine 里配置好的颜色与半径。颜色直接复用 Shine 的 blockLights 表（按手持方块查），
+非方块物品可在本模组配置里用 itemOverrides 单独指定。
+纯客户端；两侧任一缺失都不加载。
+'''
+
+[[dependencies.lddshine]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.lddshine]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.lddshine]]
+modId = "shine"
+type = "required"
+versionRange = "[${shineVersion},)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.lddshine]]
+modId = "lambdynlights"
+type = "required"
+versionRange = "[${lddVersion},)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[mixins]]
+config = "lddshine.mixins.json"

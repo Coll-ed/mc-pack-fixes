@@ -1,0 +1,39 @@
+[20:53:47] armed：等 MC 启动后 2 分钟自动录 60 秒
+[20:53:47] 发现 MC (PID 20812)，等 120 秒让世界加载完
+[20:55:47] 开始录制 60 秒
+20812:
+Started recording 1. The result will be written to:
+
+D:\AI\AIʵ����\_sessions\gcguard\stutter2.jfr
+[20:56:58] 录制完成，分析热点
+
+Count Name
+----- ----
+ 4194 com.ishland.c2me.opts.dfc.common.gen.jvm.SplineSupport.findRangeForLocation(float[], float)
+ 2188 com.ishland.c2me.opts.dfc.common.gen.jvm.InvocationShim.invokeDensityFunctionNoiseSample(DensityFunction$NoiseHolder, double, double, double)
+ 2186 net.minecraft.world.level.levelgen.DensityFunction$NoiseHolder.getValue(double, double, double)
+ 1071 net.minecraft.world.level.levelgen.synth.NormalNoise.getValue(double, double, double)
+  958 com.ishland.c2me.opts.natives_math.common.Bindings.c2me_natives_noise_perlin_double(long, double, double, double)
+  745 net.minecraft.world.level.chunk.ProtoChunk.getBlockState(BlockPos)
+  735 me.cortex.voxy.client.core.rendering.building.RenderDataFactory.generateMesh(WorldSection)
+  703 me.cortex.voxy.client.core.rendering.building.RenderGenerationService.processJob(RenderDataFactory, IntOpenHashSet)
+  674 net.minecraft.world.level.chunk.ChunkAccess.getMinBuildHeight()
+  569 net.minecraft.world.level.biome.Climate$RTree$SubTree.search(long[], Climate$RTree$Leaf, Climate$DistanceMetric)
+  562 net.minecraft.world.level.LevelHeightAccessor.isOutsideBuildHeight(int)
+  515 java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Object)
+  423 me.cortex.voxy.client.core.rendering.building.RenderDataFactory.generateFluidFaces(int)
+  409 teluri.mods.jlrays.light.sight.FbGbvSightEngine.traceQuadrant(Vector3i, int, Quadrant, AlphaHolder$IAlphaProvider, ISightUpdateConsumer, boolean)
+  406 teluri.mods.jlrays.light.misc.TaskCache.getState(int, int, int)
+  364 me.cortex.voxy.client.core.rendering.building.RenderGenerationService.lambda$new$1(RenderDataFactory, IntOpenHashSet)
+  356 teluri.mods.jlrays.light.JlrBlockLightEngine.lambda$propagateLightSources$8(TaskCache, Vector3i, int, int, Quadrant)
+  349 net.caffeinemc.mods.sodium.client.render.frapi.render.AbstractBlockRenderContext.bufferDefaultModel(BakedModel, BlockState)
+  335 net.minecraft.world.level.levelgen.SurfaceRules$SequenceRule.tryApply(int, int, int)
+  330 net.minecraft.world.level.levelgen.SurfaceRules$TestRule.tryApply(int, int, int)
+  325 net.minecraft.world.level.chunk.LevelChunkSection.getBlockState(int, int, int)
+  312 teluri.mods.jlrays.light.misc.IBlockStateProvider.get(Vector3i)
+  310 net.minecraft.world.level.levelgen.SurfaceSystem.buildSurface(RandomState, BiomeManager, Registry, boolean, WorldGenerationContext, ChunkAccess, NoiseChunk, SurfaceRules$RuleSource)
+  304 me.cortex.voxy.client.core.rendering.building.RenderDataFactory.generateDirectHorizontalFluidGeometry()
+  302 me.cortex.voxy.common.thread.PerThreadContextExecutor.run()
+
+
+[20:57:00] 分析完成

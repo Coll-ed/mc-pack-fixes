@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "biomelink"
+version = "${version}"
+displayName = "群系联动结构（BYG × 原版结构）"
+authors = "Follwing_Rain"
+description = '''
+两件事，都在模组内置数据里完成，不改任何其他 jar：
+
+1) 分类映射：把 BYG 的群系分类并入原版群系标签（minecraft:is_forest / is_taiga /
+   is_savanna / is_jungle / is_badlands / is_beach / is_ocean / is_deep_ocean /
+   is_mountain / is_hill / is_overworld）。这样一来，任何「用原版分类标签决定生成群系」
+   的结构模组都会自动长在 BYG 群系里，不需要逐结构写桥接。
+
+2) 原版结构直连：data/minecraft/tags/worldgen/biome/has_structure/*.json（20 个），
+   覆盖矿井、试炼密室、掠夺者前哨、标准废弃传送门、古迹废墟、埋藏宝藏、五类村庄、
+   林地府邸、沼泽小屋、丛林神庙、沙漠神殿、雪屋、沉船与搁浅沉船、海底神殿、暖海废墟。
+   BYG 自身已带 17 个同类标签，本模组额外补齐矿井 / 海底神殿 / 标准废弃传送门 / 搁浅沉船。
+
+标签均为「合并」语义（replace=false），不会覆盖原版或其他模组条目。
+'''
+
+[[dependencies.biomelink]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.biomelink]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.biomelink]]
+modId = "biomeswevegone"
+type = "optional"
+versionRange = "[2.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

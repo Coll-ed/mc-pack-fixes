@@ -1,0 +1,14 @@
+{
+    "replace":  true,
+    "values":  [
+                   "unusualend:prismatic_material",
+                   "unusualend:shiny_material",
+                   "unusualend:citrine_material",
+                   "unusualend:pearlescent_material",
+                   "creaturefeature:ectoplasm",
+                   "creaturefeature:scroll_pan",
+                   "creaturefeature:scroll_trans",
+                   "creaturefeature:scroll_pride",
+                   "creaturefeature:scroll_bi"
+               ]
+}

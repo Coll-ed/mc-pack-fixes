@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.yglcs.geofpv.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["GeoArmorRendererMixin"],
+  "injectors": {"defaultRequire": 1}
+}

@@ -1,0 +1,16 @@
+{
+  "replace": true,
+  "values": [
+    "#minecraft:head_armor",
+    "ice_and_fire_spellbooks:fire_dragon_priest_helmet",
+    "ice_and_fire_spellbooks:ice_dragon_priest_helmet",
+    "ice_and_fire_spellbooks:lightning_dragon_priest_helmet",
+    "twilightforest:ironwood_helmet",
+    "twilightforest:steeleaf_helmet",
+    "twilightforest:knightmetal_helmet",
+    "twilightforest:phantom_helmet",
+    "twilightforest:fiery_helmet",
+    "twilightforest:arctic_helmet",
+    "twilightforest:yeti_helmet"
+  ]
+}

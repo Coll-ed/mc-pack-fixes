@@ -1,0 +1,29 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "gcguard"
+version = "${version}"
+displayName = "GC Guard"
+authors = "Follwing_Rain"
+description = '''
+在客户端按阈值主动触发一次回收，缓解"跑图后原地发呆、堆一路涨到 90% 才被 G1 收掉"的观感。
+
+纯客户端。检测到堆占用超过阈值、且距离上次回收超过冷却时间时，调用一次 System.gc()，
+并把回收前后的占用写进日志。所有行为都可在 config/gcguard-client.toml 里关闭或调参。
+'''
+
+[[dependencies.gcguard]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.gcguard]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"

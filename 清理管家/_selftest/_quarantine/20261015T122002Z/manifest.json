@@ -1,0 +1,41 @@
+﻿{
+    "version":  1,
+    "action":  "quarantine",
+    "tool":  "janitor",
+    "toolVersion":  "1.0.0",
+    "createdUtc":  "2026-10-15T12:20:02.8556883Z",
+    "batchUtc":  "20261015T122002Z",
+    "batchDir":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z",
+    "sourceManifest":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_reports\\candidates-dedup-20261015T121946Z.json",
+    "configPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\selftest.config.jsonc",
+    "quarantineRoot":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine",
+    "entryCount":  2,
+    "entries":  [
+                    {
+                        "originalPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+                        "quarantinePath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+                        "kind":  "file",
+                        "bytes":  1310720,
+                        "fileCount":  1,
+                        "sha256":  "C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66",
+                        "algorithm":  "SHA256",
+                        "category":  "dedup-duplicate",
+                        "action":  "quarantine",
+                        "mode":  "move",
+                        "utc":  "2026-10-15T12:20:02.8345433Z"
+                    },
+                    {
+                        "originalPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+                        "quarantinePath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+                        "kind":  "file",
+                        "bytes":  1310720,
+                        "fileCount":  1,
+                        "sha256":  "C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66",
+                        "algorithm":  "SHA256",
+                        "category":  "dedup-duplicate",
+                        "action":  "quarantine",
+                        "mode":  "move",
+                        "utc":  "2026-10-15T12:20:02.8556883Z"
+                    }
+                ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#biomeswevegone:mountain",
+    "#biomeswevegone:windswept",
+    "#biomeswevegone:peak",
+    "#c:is_mountain",
+    "#c:is_windswept"
+  ]
+}

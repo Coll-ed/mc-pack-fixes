@@ -1,0 +1,19 @@
+{
+  "_comment": "物品 id → 颜色/半径/强度。只用于 Shine 的 blockLights 表里没有、但玩家会拿在手上的发光物品；优先级低于 Shine 表与用户 itemOverrides。",
+  "items": {
+    "minecraft:torch": { "color": "#FFD27F", "radius": 12.0, "intensity": 0.9 },
+    "minecraft:lantern": { "color": "#FFCC66", "radius": 14.0, "intensity": 0.9 },
+    "minecraft:glowstone": { "color": "#FFDD88", "radius": 15.0, "intensity": 1.0 },
+    "minecraft:glowstone_dust": { "color": "#FFD27F", "radius": 8.0, "intensity": 0.5 },
+    "minecraft:jack_o_lantern": { "color": "#FFB347", "radius": 14.0, "intensity": 0.9 },
+    "minecraft:campfire": { "color": "#FFAA55", "radius": 14.0, "intensity": 0.8 },
+    "minecraft:magma_block": { "color": "#FF8C42", "radius": 10.0, "intensity": 0.7 },
+    "minecraft:lava_bucket": { "color": "#FF7A1A", "radius": 13.0, "intensity": 1.0 },
+    "minecraft:end_rod": { "color": "#FFF4D6", "radius": 8.0, "intensity": 0.6 },
+    "minecraft:beacon": { "color": "#A0FFFF", "radius": 15.0, "intensity": 1.0 },
+    "minecraft:blaze_rod": { "color": "#FFC04D", "radius": 6.0, "intensity": 0.5 },
+    "minecraft:blaze_powder": { "color": "#FFC04D", "radius": 5.0, "intensity": 0.4 },
+    "minecraft:glow_ink_sac": { "color": "#ECFFA6", "radius": 5.0, "intensity": 0.4 },
+    "minecraft:amethyst_shard": { "color": "#D580FF", "radius": 6.0, "intensity": 0.9 }
+  }
+}

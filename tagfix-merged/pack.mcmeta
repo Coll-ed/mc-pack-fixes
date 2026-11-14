@@ -1,0 +1,11 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": [
+      {
+        "text": "Enchantable Tag Fix - 修复 ice_and_fire_spellbooks 向 #minecraft:enchantable/head_armor 追加 5 个不存在物品导致整族标签加载失败的问题",
+        "color": "aqua"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#biomeswevegone:badlands",
+    "#biomeswevegone:sandy",
+    "#c:is_sandy",
+    "#c:is_wasteland"
+  ]
+}

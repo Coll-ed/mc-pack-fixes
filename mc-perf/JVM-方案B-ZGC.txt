@@ -1,0 +1,36 @@
+【方案 B】换成 ZGC（针对"内存回收不掉 + 越玩越卡"最直接的一招）
+
+════════════ 为什么是 ZGC ════════════
+
+· 你的 Java 是 Microsoft **25.0.3**：JDK 23 起 -XX:+UseZGC 就是**分代 ZGC**，停顿 < 1 ms，
+  而且**不依赖 region 粒度** —— 方案 A 里"32 MB region 收不回来"这个问题从根上消失。
+· ZUncommit=true（默认）→ 空闲内存会**归还给操作系统**；G1 默认不主动还。
+· **关键一条**：-XX:SoftMaxHeapSize=6g
+  → ZGC 会主动回收以维持在 6 GB 以下，而不是像现在这样等到 8 GB 才动手。
+  → 你现在的 SoftMaxHeapSize = 8556380160 ≈ Xmx（JVM 自动设的），等于"软上限形同不存在"，
+    这正是"已提交 94% 却不释放"的机制。
+· 你有 16 个物理核，ZGC 的并发线程吃得下 —— CPU 是它唯一的代价。
+
+════════════ 完整一行（G1 那一串全部删掉）════════════
+
+-Xmx8151m -XX:+UseZGC -XX:SoftMaxHeapSize=6g -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:-OmitStackTraceInFastThrow -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:TieredCompileTaskTimeout=10000 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NmethodSweepActivity=1 -XX:+UseCompactObjectHeaders -Xlog:gc*:file=logs/gc.log:time,uptime,level,tags:filecount=5,filesize=8M
+
+════════════ 已经实测过（不是照抄网上参数）════════════
+
+本机用**与你的完全同版本** Java 25.0.3 跑：
+
+  java -Xmx8151m -XX:+UseZGC -XX:SoftMaxHeapSize=6g -XX:+UseCompactObjectHeaders -version
+  → 参数全部被接受，exit 0（没有 Unrecognized VM option）
+
+  java -Xmx8151m -XX:+UseZGC -XX:SoftMaxHeapSize=6g -XX:+PrintFlagsFinal -version
+  → SoftMaxHeapSize = 6442450944  {command line}     （6 GB 生效）
+  → ZUncommit        = true        {product}{default} （会把内存还给系统）
+  → UseZGC           = true        {command line}
+
+════════════ 风险与本轮建议 ════════════
+
+· 代价：CPU 占用上升、堆外内存开销略增（8 GB 堆 + 你 32 GB 交换空间足够）
+· 若想更积极回收，可把 SoftMaxHeapSize 降到 5g —— **不要再低**（这个整合包体量大，低于 4g 会频繁触发 GC）
+· 本轮建议顺序：**先上方案 A + GC 日志**跑一段，把 logs/gc.log 交给我；
+  如果日志显示 Mixed GC 收不动、或出现 Full GC / to-space exhausted，再换 B。
+  这样每一步都有数据支撑，而不是"换个参数碰运气"。

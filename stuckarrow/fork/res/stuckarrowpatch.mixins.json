@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.yglcs.stuckarrow.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractArrowHitMixin"
+  ],
+  "client": [
+    "AitkHideLayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

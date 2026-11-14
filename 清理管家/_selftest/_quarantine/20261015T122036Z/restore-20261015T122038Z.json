@@ -1,0 +1,115 @@
+{
+  "tool": "janitor",
+  "toolVersion": "1.0.0",
+  "command": "restore",
+  "createdUtc": "2026-10-15T12:20:38.4724764Z",
+  "manifest": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\manifest.json",
+  "configPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\selftest.config.jsonc",
+  "totals": {
+    "entryCount": 10,
+    "restored": 10,
+    "failed": 0
+  },
+  "results": [
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\__pycache__",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\__pycache__",
+      "Kind": "directory",
+      "Bytes": 25,
+      "Sha256": "",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.0989563Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\cache.tmp",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\cache.tmp",
+      "Kind": "file",
+      "Bytes": 23,
+      "Sha256": "A809817D1262A8832A5BBA652C9734F56998C5575C155276109E1EFDCFDBCC99",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.1566213Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules",
+      "Kind": "directory",
+      "Bytes": 83,
+      "Sha256": "",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.2097789Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes.txt.bak",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes.txt.bak",
+      "Kind": "file",
+      "Bytes": 15,
+      "Sha256": "2BC245FCB486ECBCF2832ECC35F61FB420A48F305E791358429452C6D0E4D6B6",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.2443730Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\legacy_backup.txt",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\legacy_backup.txt",
+      "Kind": "file",
+      "Bytes": 35,
+      "Sha256": "CE80E152DD3430F6B46F140AFBEE416F1FC0BC357E678184418304E1CBD4A413",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.2808405Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes copy.txt",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes copy.txt",
+      "Kind": "file",
+      "Bytes": 29,
+      "Sha256": "9CC302CBC4C1F742EDC2B760DA4227F4241D2522E0A7BF6F679382FDB03F38B3",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.3162406Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes-副本.txt",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes-副本.txt",
+      "Kind": "file",
+      "Bytes": 15,
+      "Sha256": "FE551215858A14EB6305E8BD81B59A1B35B00FED8B6BD89DEFC5A3BE28CC1D7C",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.3532143Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\zero-byte.log",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\zero-byte.log",
+      "Kind": "file",
+      "Bytes": 0,
+      "Sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.3802872Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\empty-shell",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\empty-shell",
+      "Kind": "directory",
+      "Bytes": 0,
+      "Sha256": "",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.4209018Z"
+    },
+    {
+      "OriginalPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\deep",
+      "QuarantinePath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122036Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\deep",
+      "Kind": "directory",
+      "Bytes": 0,
+      "Sha256": "",
+      "Success": true,
+      "Failure": null,
+      "Utc": "2026-10-15T12:20:38.4694430Z"
+    }
+  ]
+}

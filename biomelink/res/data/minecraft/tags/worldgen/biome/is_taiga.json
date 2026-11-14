@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#biomeswevegone:taiga",
+    "#biomeswevegone:coniferous",
+    "#biomeswevegone:icy",
+    "#c:is_icy",
+    "#c:is_snowy"
+  ]
+}

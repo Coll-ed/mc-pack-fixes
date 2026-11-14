@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.yglcs.fpafix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["HumanoidArmorLayerMixin"],
+  "injectors": {"defaultRequire": 1}
+}

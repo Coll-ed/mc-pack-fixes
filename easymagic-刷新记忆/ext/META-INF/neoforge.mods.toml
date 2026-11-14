@@ -1,0 +1,49 @@
+modLoader = "javafml"
+loaderVersion = "*"
+license = "MPL-2.0"
+issueTrackerURL = "https://github.com/Fuzss/easymagic/issues"
+
+[[mods]]
+modId = "easymagic"
+displayName = "Easy Magic"
+description = "Enchanting tables as they always should have been! Items stay after closing, and easy re-rolls."
+version = "21.1.4"
+authors = "Fuzs"
+logoFile = "mod_banner.png"
+logoBlur = false
+displayURL = "https://github.com/Fuzss/easymagic"
+updateJSONURL = "https://raw.githubusercontent.com/Fuzss/modresources/main/update/easymagic.json"
+displayTest = "MATCH_VERSION"
+
+[[mixins]]
+config="easymagic.common.mixins.json"
+
+[[mixins]]
+config="easymagic.neoforge.mixins.json"
+
+[[dependencies.easymagic]]
+modId = "neoforge"
+mandatory = true
+type = "required"
+versionRange = "[21.1.21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.easymagic]]
+modId = "minecraft"
+mandatory = true
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.easymagic]]
+modId = "puzzleslib"
+mandatory = true
+type = "required"
+versionRange = "[21.1.8,)"
+ordering = "NONE"
+side = "BOTH"
+
+[modproperties.easymagic]
+catalogueImageIcon = "mod_logo.png"

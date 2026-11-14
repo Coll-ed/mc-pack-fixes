@@ -1,0 +1,35 @@
+﻿{
+    "tool":  "janitor",
+    "toolVersion":  "1.0.0",
+    "command":  "restore",
+    "createdUtc":  "2026-10-15T12:20:08.1990452Z",
+    "manifest":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z\\manifest.json",
+    "configPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\selftest.config.jsonc",
+    "totals":  {
+                   "entryCount":  2,
+                   "restored":  2,
+                   "failed":  0
+               },
+    "results":  [
+                    {
+                        "OriginalPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+                        "QuarantinePath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+                        "Kind":  "file",
+                        "Bytes":  1310720,
+                        "Sha256":  "C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66",
+                        "Success":  true,
+                        "Failure":  null,
+                        "Utc":  "2026-10-15T12:20:08.1706227Z"
+                    },
+                    {
+                        "OriginalPath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+                        "QuarantinePath":  "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_quarantine\\20261015T122002Z\\D\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+                        "Kind":  "file",
+                        "Bytes":  1310720,
+                        "Sha256":  "C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66",
+                        "Success":  true,
+                        "Failure":  null,
+                        "Utc":  "2026-10-15T12:20:08.1954077Z"
+                    }
+                ]
+}

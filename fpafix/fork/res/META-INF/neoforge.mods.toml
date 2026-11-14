@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "fpad"
+version = "${version}"
+displayName = "First-Person Armor Fix"
+authors = "Follwing_Rain"
+description = '''
+第一人称下不再渲染「本地玩家自己」的盔甲层。
+
+背景：原版第一人称根本不会调用 HumanoidArmorLayer，所以看不到自己的盔甲；
+但装了某些「第一人称增强」模组后，玩家渲染器会被额外调用一次，把整条盔甲层也带进来——
+GeckoLib 系 3D 盔甲（SC 枪械、铁魔法等）全都挂在这条链路上，于是第一人称会看到悬浮的盔甲板。
+
+本模组在 HumanoidArmorLayer#render 的入口加一道判定：只要当前是第一人称且正在渲染本地玩家，
+就直接取消。第三人称、其他实体、盔甲物品图标与属性完全不受影响。
+'''
+
+[[dependencies.fpafix]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.fpafix]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "fpad.mixins.json"

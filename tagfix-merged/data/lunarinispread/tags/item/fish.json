@@ -1,0 +1,11 @@
+{
+    "replace":  true,
+    "values":  [
+                   "kaleidoscope_cookery:stargazy_pie",
+                   "kaleidoscope_cookery:nether_style_sashimi",
+                   "kaleidoscope_cookery:end_style_sashimi",
+                   "kaleidoscope_cookery:desert_style_sashimi",
+                   "kaleidoscope_cookery:tundra_style_sashimi",
+                   "kaleidoscope_cookery:cold_style_sashimi"
+               ]
+}

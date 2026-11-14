@@ -1,0 +1,6 @@
+{
+ "slate_menu.creative.order.hint": "拖动标签页即可移动位置",
+ "slate_menu.creative.order.reset": "重置标签页顺序",
+ "slate_menu.creative.order.reset.tip": "创造模式背包的物品标签页可以拖到列表中的其他位置并保持不动。此按钮把它们恢复到游戏原本的顺序。",
+ "slate_menu.creative.order.section": "创造模式背包"
+}

@@ -1,0 +1,50 @@
+{
+  "mappings": {
+    "fuzs/easymagic/mixin/ChiseledBookShelfBlockEntityMixin": {
+      "updateState": "Lnet/minecraft/class_7716;method_47585(I)V"
+    },
+    "fuzs/easymagic/mixin/EnchantingTableBlockMixin": {
+      "isValidBookShelf": "Lnet/minecraft/class_2331;method_40445(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2338;)Z"
+    },
+    "fuzs/easymagic/mixin/WorldGenRegionMixin": {
+      "setBlock": "Lnet/minecraft/class_3233;method_30092(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;II)Z"
+    },
+    "fuzs/easymagic/mixin/accessor/EnchantmentMenuAccessor": {
+      "enchantSlots": "field_7809:Lnet/minecraft/class_1263;",
+      "enchantmentSeed": "field_7814:Lnet/minecraft/class_3915;",
+      "getEnchantmentList": "method_7637(Lnet/minecraft/class_5455;Lnet/minecraft/class_1799;II)Ljava/util/List;",
+      "random": "field_7811:Lnet/minecraft/class_5819;"
+    },
+    "fuzs/easymagic/mixin/accessor/PlayerAccessor": {
+      "enchantmentSeed": "field_7494:I"
+    },
+    "fuzs/easymagic/mixin/client/accessor/ChiseledBookShelfBlockAccessor": {
+      "getHitSlot": "method_47580(Lnet/minecraft/class_3965;Lnet/minecraft/class_2680;)Ljava/util/OptionalInt;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "fuzs/easymagic/mixin/ChiseledBookShelfBlockEntityMixin": {
+        "updateState": "Lnet/minecraft/class_7716;method_47585(I)V"
+      },
+      "fuzs/easymagic/mixin/EnchantingTableBlockMixin": {
+        "isValidBookShelf": "Lnet/minecraft/class_2331;method_40445(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2338;)Z"
+      },
+      "fuzs/easymagic/mixin/WorldGenRegionMixin": {
+        "setBlock": "Lnet/minecraft/class_3233;method_30092(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;II)Z"
+      },
+      "fuzs/easymagic/mixin/accessor/EnchantmentMenuAccessor": {
+        "enchantSlots": "field_7809:Lnet/minecraft/class_1263;",
+        "enchantmentSeed": "field_7814:Lnet/minecraft/class_3915;",
+        "getEnchantmentList": "method_7637(Lnet/minecraft/class_5455;Lnet/minecraft/class_1799;II)Ljava/util/List;",
+        "random": "field_7811:Lnet/minecraft/class_5819;"
+      },
+      "fuzs/easymagic/mixin/accessor/PlayerAccessor": {
+        "enchantmentSeed": "field_7494:I"
+      },
+      "fuzs/easymagic/mixin/client/accessor/ChiseledBookShelfBlockAccessor": {
+        "getHitSlot": "method_47580(Lnet/minecraft/class_3965;Lnet/minecraft/class_2680;)Ljava/util/OptionalInt;"
+      }
+    }
+  }
+}

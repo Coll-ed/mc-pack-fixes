@@ -1,0 +1,44 @@
+【最终方案】分代 ZGC + 软堆上限（针对"回收不掉 → 越玩越卡"）
+
+════════════ 在你现有基础上的完整替换行 ════════════
+（把 HMCL「JVM 参数」框里的内容**整体替换**成下面这一行）
+
+-Xmx10g -XX:+UseZGC -XX:SoftMaxHeapSize=7g -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:-OmitStackTraceInFastThrow -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:TieredCompileTaskTimeout=10000 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NmethodSweepActivity=1 -XX:+UseCompactObjectHeaders -Xlog:gc*:file=logs/gc.log:time,uptime,level,tags:filecount=5,filesize=8M
+
+════════════ ⚠️ 必须同时做的一件事（否则游戏起不来）════════════
+
+你说自己没加过参数，那 G1 那串是**启动器/预设自动加的**。我实测过：
+
+    java -XX:+UseZGC -XX:+UseG1GC -version
+    → Error occurred during initialization of VM
+      Multiple garbage collectors selected        （exit 1）
+
+也就是说：**只要那串里还有 `-XX:+UseG1GC`，加上 ZGC 就会直接启动失败**。
+所以你要做的是二选一：
+  · 找到 HMCL 里"自动优化/推荐参数"之类的开关并关掉，然后在 JVM 参数框填上面这行；或
+  · 直接在 JVM 参数框填上面这行（若 HMCL 是"整行替换"语义就够了）
+**判断是否成功**：能进游戏 = 成功（失败会当场报 Multiple garbage collectors selected，不会静默）。
+
+════════════ 每一项的依据（本机同版本 Microsoft JDK 25.0.3 实跑取值）════════════
+
+  MaxHeapSize           = 10737418240  (10 GB)  {command line}
+  SoftMaxHeapSize       = 7516192768   (7 GB)   {command line}
+  UseZGC                = true                  {command line}
+  ZUncommit             = true                  {default}
+  UseCompactObjectHeaders = true                {command line}
+
+为什么这么配（逐条对应你的症状）：
+  · **-Xmx10g（原 8g）**：你的崩溃报告显示"已提交 7680 MiB / 上限 8160 MiB / 实际只用 3190 MiB"——
+    堆太挤、又没软上限。32 GB 物理内存下给 10 GB 是安全区间（其余留给 Voxy 等的堆外占用）。
+  · **-XX:SoftMaxHeapSize=7g ← 最关键的一条**：ZGC 会**主动回收以维持在 7 GB 以下**，
+    而不是像现在这样（SoftMaxHeapSize 被 JVM 自动设成 ≈Xmx，等于"软上限形同不存在"）。
+  · **ZGC 替代 G1**：不再受 region 粒度影响（你现在写死 32 MB region，8151 MB 只切成 255 个，
+    而 G1 的设计目标是约 2048 个）；停顿 <1 ms，且 ZUncommit 会把空闲内存**还给操作系统**。
+  · **-Xlog:gc\***：取证。换好参数玩一段后把 `<实例>\logs\gc.log` 给我，我用它定量判断
+    回收是否真的生效（ZGC 的日志会显示 GC 周期与堆回落曲线）。
+  · JIT 那几条（MaxNodeLimit / NmethodSweepActivity / ProfiledCodeHeapSize …）**保留你原有的**，
+    它们与内存回收无关但在模组包里有价值，属于"最小改动"。
+
+════════════ 回退 ════════════
+把那行换回原来的（或清空让启动器用默认）即可。原参数我在
+`JVM-方案A-修G1.txt` 里也留了完整一份，随时可对照。

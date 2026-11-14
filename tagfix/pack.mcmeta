@@ -1,0 +1,11 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": [
+      {
+        "text": "Tag fixes: repairs tags that fail to load because they reference non-existent entries",
+        "color": "aqua"
+      }
+    ]
+  }
+}

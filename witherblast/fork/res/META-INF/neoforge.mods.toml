@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "witherblastfix"
+version = "${version}"
+displayName = "Wither Barrage No-Grief"
+authors = "Follwing_Rain"
+description = '''
+让 Wither Reincarnated 的齐射（Barrage）发射的凋零头不再破坏方块，伤害与特效完全保留。
+
+做法：齐射生成 WitherSkull 时给它打一个持久化标记；带标记的骷髅触发爆炸时，
+把 ExplosionInteraction 从 MOB 降级为 NONE（破坏方块关闭，实体伤害/粒子/音效不变）。
+普通凋零头（Boss 的普通攻击）不受影响。
+'''
+
+[[dependencies.witherblastfix]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.witherblastfix]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.witherblastfix]]
+modId = "witherreincarnated"
+type = "required"
+versionRange = "[${targetVersion},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "witherblastfix.mixins.json"

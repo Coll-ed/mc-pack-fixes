@@ -1,0 +1,38 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="stuckarrowpatch"
+version="0.2.0"
+displayName="Stuck Arrow Hit Patch"
+authors="Follwing_Rain"
+description='''
+让 AITK（Arrow In The Knee）的假箭按真实命中点与弹道朝向渲染。
+仅客户端、仅单人/整合服务器有效；无命中记录时自动回退 AITK 原行为。
+'''
+
+# NeoForge 1.20.2+ 的官方声明方式：混入配置必须在这里注册，否则不会被加载。
+[[mixins]]
+config="stuckarrowpatch.mixins.json"
+
+[[dependencies.stuckarrowpatch]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.176,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.stuckarrowpatch]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.stuckarrowpatch]]
+modId="aitk"
+type="required"
+versionRange="[1.0,)"
+ordering="AFTER"
+side="CLIENT"

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "createdUtc": "2026-10-15T12:17:16.3504926Z",
+  "source": "scan",
+  "entries": [
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\__pycache__",
+      "category": "pycache-dir",
+      "kind": "dir",
+      "bytes": 25
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\cache.tmp",
+      "category": "tmp-file",
+      "kind": "file",
+      "bytes": 23
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules",
+      "category": "node-modules-dir",
+      "kind": "dir",
+      "bytes": 83
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes.txt.bak",
+      "category": "backup-file",
+      "kind": "file",
+      "bytes": 15
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\zero-byte.log",
+      "category": "zero-byte-file",
+      "kind": "file",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\deep",
+      "category": "empty-shell-dir",
+      "kind": "dir",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\empty-shell",
+      "category": "empty-shell-dir",
+      "kind": "dir",
+      "bytes": 0
+    }
+  ]
+}

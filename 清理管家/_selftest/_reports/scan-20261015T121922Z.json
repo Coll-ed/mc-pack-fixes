@@ -1,0 +1,180 @@
+{
+  "tool": "janitor",
+  "toolVersion": "1.0.0",
+  "command": "scan",
+  "generatedUtc": "2026-10-15T12:19:22.7896313Z",
+  "configPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\selftest.config.jsonc",
+  "powershell": "7.6.7 (Core)",
+  "parameters": {
+    "recentDays": 30,
+    "sampleLimit": 5,
+    "onEnumerationError": "log"
+  },
+  "roots": [
+    {
+      "Root": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox",
+      "FileCount": 23,
+      "DirCount": 11,
+      "TotalBytes": 3932789,
+      "RecentFileCount": 21,
+      "LastWriteUtc": "2026-10-15T12:19:21.5508321Z",
+      "FirstLevel": [
+        {
+          "Name": "active-project",
+          "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\active-project",
+          "FileCount": 3,
+          "TotalBytes": 90,
+          "RecentFileCount": 3,
+          "LastWriteUtc": "2026-10-15T12:19:20.6245627Z"
+        },
+        {
+          "Name": "project",
+          "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project",
+          "FileCount": 20,
+          "TotalBytes": 3932699,
+          "RecentFileCount": 18,
+          "LastWriteUtc": "2026-10-15T12:19:21.5508321Z"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "Id": "pycache-dir",
+      "Label": "__pycache__ 目录",
+      "Note": "Python 字节码缓存",
+      "FileCount": 0,
+      "DirCount": 2,
+      "ReclaimBytes": 38,
+      "ProtectedCount": 1,
+      "ProtectedBytes": 13,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\__pycache__",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\active-project\\__pycache__（受保护，未列入候选）"
+      ]
+    },
+    {
+      "Id": "pyc-file",
+      "Label": "*.pyc / *.pyo",
+      "Note": "编译产物",
+      "FileCount": 0,
+      "DirCount": 0,
+      "ReclaimBytes": 0,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": []
+    },
+    {
+      "Id": "tmp-file",
+      "Label": "*.tmp",
+      "Note": "临时文件",
+      "FileCount": 4,
+      "DirCount": 0,
+      "ReclaimBytes": 105,
+      "ProtectedCount": 3,
+      "ProtectedBytes": 82,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\cache.tmp",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\.git\\scratch.tmp（受保护，未列入候选）",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\.dsh\\session.tmp（受保护，未列入候选）",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\active-project\\data.tmp（受保护，未列入候选）"
+      ]
+    },
+    {
+      "Id": "node-modules-dir",
+      "Label": "node_modules 目录",
+      "Note": "依赖目录",
+      "FileCount": 0,
+      "DirCount": 1,
+      "ReclaimBytes": 83,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules"
+      ]
+    },
+    {
+      "Id": "backup-file",
+      "Label": "*.bak / *.old / *.orig",
+      "Note": "旧版本",
+      "FileCount": 1,
+      "DirCount": 0,
+      "ReclaimBytes": 15,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes.txt.bak"
+      ]
+    },
+    {
+      "Id": "copy-suffix",
+      "Label": "-副本 / copy / 备份 / _backup",
+      "Note": "手工副本",
+      "FileCount": 3,
+      "DirCount": 0,
+      "ReclaimBytes": 79,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\legacy_backup.txt",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes copy.txt",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\notes-副本.txt"
+      ]
+    },
+    {
+      "Id": "zero-byte-file",
+      "Label": "零字节文件",
+      "Note": "写入失败或占位残留",
+      "FileCount": 1,
+      "DirCount": 0,
+      "ReclaimBytes": 0,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\zero-byte.log"
+      ]
+    },
+    {
+      "Id": "empty-shell-dir",
+      "Label": "空壳目录（递归 0 文件）",
+      "Note": "只有目录结构",
+      "FileCount": 0,
+      "DirCount": 2,
+      "ReclaimBytes": 0,
+      "ProtectedCount": 0,
+      "ProtectedBytes": 0,
+      "Samples": [
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\empty-shell",
+        "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\deep"
+      ]
+    }
+  ],
+  "totals": {
+    "fileCount": 23,
+    "totalBytes": 3932789,
+    "recentFileCount": 21,
+    "reclaimBytes": 320,
+    "protectedReclaimBytes": 95,
+    "candidateCount": 10
+  },
+  "enumerationErrors": [],
+  "deadDirs": [
+    {
+      "Root": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox",
+      "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules",
+      "Depth": 2,
+      "FileCount": 2,
+      "TotalBytes": 83,
+      "LastWriteUtc": "2026-10-15T12:19:20.6466131Z"
+    },
+    {
+      "Root": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox",
+      "Path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\node_modules\\left-pad",
+      "Depth": 3,
+      "FileCount": 2,
+      "TotalBytes": 83,
+      "LastWriteUtc": "2026-10-15T12:19:20.6466131Z"
+    }
+  ],
+  "candidatesManifestPath": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\_reports\\candidates-scan-20261015T121922Z.json"
+}

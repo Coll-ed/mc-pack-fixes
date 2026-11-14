@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "createdUtc": "2026-10-15T12:22:18.7399511Z",
+  "source": "dedup",
+  "entries": [
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-b.bin",
+      "category": "dedup-duplicate",
+      "kind": "file",
+      "bytes": 1310720,
+      "note": "与保留件同哈希（C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66），保留：D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-c.bin"
+    },
+    {
+      "path": "D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-a.bin",
+      "category": "dedup-duplicate",
+      "kind": "file",
+      "bytes": 1310720,
+      "note": "与保留件同哈希（C067948830BED16FA947AEA8185C24170D1290438F13A9D012D1320F760B0F66），保留：D:\\AI\\AI工具箱\\_janitor\\_selftest\\sandbox\\project\\dup-c.bin"
+    }
+  ]
+}

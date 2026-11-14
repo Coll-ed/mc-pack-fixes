@@ -1,0 +1,54 @@
+【方案 A】保留 G1，只改 3 处 + 加 GC 日志（最保守，风险最低）
+
+════════════ 改动清单（相对你现在的 20 条参数）════════════
+
+删：-XX:G1HeapRegionSize=32m
+改：-XX:MaxGCPauseMillis=50      →  -XX:MaxGCPauseMillis=200
+加：-XX:+ExplicitGCInvokesConcurrent
+加：-Xlog:gc*:file=logs/gc.log:time,uptime,level,tags:filecount=5,filesize=8M
+
+（-XX:G1NewSizePercent=20 这次**不建议**一起动：它和 200ms 是配套的，先只改必要项，一次改一个变量才好判断）
+
+════════════ 依据（本机用你的同版本 Microsoft JDK 25.0.3 实测，-XX:+PrintFlagsFinal）════════════
+
+G1HeapRegionSize = 33554432  (32 MB)  {command line}   ← 你写死的
+                 = 4194304   (4 MB)   {ergonomic}      ← 不写死时 JVM 自己选这个
+
+  堆上限 8151 MB ÷ 32 MB = 255 个 region
+  堆上限 8151 MB ÷  4 MB = 2038 个 region   ← G1 的设计目标约 2048 个
+
+  ⇒ 你现在的配置把回收粒度放粗了 8 倍。G1 以 region 为单位回收：一个 32 MB 的 region 里
+    只要还剩几个活对象，整块 32 MB 就收不回来 —— 这正是"内存降不下去"的直接机制。
+
+MaxGCPauseMillis = 200 {default}（你写了 50）
+  ⇒ 50 ms 对一个 8 GB 的模组整合包过于激进：G1 会优先做"够短的 Young GC"、
+    把耗时更长的 Mixed GC（回收老年代）一直往后推 → 老年代只涨不降。
+
+ExplicitGCInvokesConcurrent = false {default}（你没设）
+  ⇒ 模组里任何一次 System.gc() 都会触发**整堆 stop-the-world Full GC**。
+    对一个已提交 7.5 GB 的堆，那是一次好几秒的冻结。
+
+SoftMaxHeapSize = 8556380160 ≈ Xmx {ergonomic}（你没设，JVM 自动设成等于上限）
+  ⇒ 没有任何力量把已提交的堆压回去。
+
+对照你崩溃报告里的实测数字：
+  Memory: 3190 MiB 已用 / 7680 MiB 已提交 / 8160 MiB 上限
+  ⇒ 已提交 94%、实际只用 39% —— 这就是你说的"稳定在高位但回收不掉"。
+
+════════════ 完整一行（把启动器里原来那行整个替换掉）════════════
+
+-Xmx8151m -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+UseG1GC -XX:G1MixedGCCountTarget=5 -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=200 -XX:+ExplicitGCInvokesConcurrent -XX:-OmitStackTraceInFastThrow -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:TieredCompileTaskTimeout=10000 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NmethodSweepActivity=1 -XX:+UseCompactObjectHeaders -Xlog:gc*:file=logs/gc.log:time,uptime,level,tags:filecount=5,filesize=8M -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+
+════════════ 预期效果 ════════════
+
+· 老年代按 4 MB 粒度回收（而不是 32 MB）→ 真正能把内存还回去
+· Mixed GC 不再被 50 ms 目标压着不做 → 老年代不会只涨不降
+· 模组调 System.gc() 不再造成整堆停顿
+· GC 日志落在 <游戏目录>/logs/gc.log，5 个文件 × 8 MB 滚动（我拿到它就能**用数据定性**：
+  看 Mixed GC 每次回收了多少、有没有 Full GC、有没有 "to-space exhausted"）
+
+════════════ 我没能确定的事（需要你告诉我）════════════
+
+这 20 条参数不在 ~/.hmcl 的任何配置里、不在实例的版本 json 里、不在环境变量里、
+也不在 D:\GAME\MC 下的任何文本配置里。所以我无法指出"在哪个界面改"。
+请告诉我你是怎么启动游戏的、当初把这串参数填在哪里（HMCL 的 JVM 参数框？启动脚本？另一个启动器？）

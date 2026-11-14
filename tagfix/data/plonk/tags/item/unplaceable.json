@@ -1,0 +1,7 @@
+{
+    "replace":  true,
+    "values":  [
+                   "carryon:entity_item",
+                   "carryon:tile_item"
+               ]
+}
